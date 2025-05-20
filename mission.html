@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission & Vision - SOGETEC | Matériel Électronique Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+ 
+        
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .mission-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .mission-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .mission-paragraph {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mission-paragraph:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .mission-paragraph h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .mission-paragraph p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .value-item {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .mission-box, .vision-box {
+            background-color: var(--accent-color);
+            padding: 40px;
+            border-radius: 10px;
+            position: relative;
+        }
+        
+        .mission-box {
+            border-top: 5px solid var(--primary-color);
+        }
+        
+        .vision-box {
+            border-top: 5px solid var(--secondary-color);
+        }
+        
+        .mission-box h3, .vision-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mission-container {
+                padding: 0 20px;
+            }
+            
+            .mission-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SOGE<span>TEC</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <main>
+        <div class="mission-container">
+            <h2 class="section-title">NOTRE ENGAGEMENT STRATÉGIQUE</h2>
+            
+            <div class="mission-content">
+                <div class="mission-paragraph">
+                    <h3>Notre Raison d'Être</h3>
+                    <p>
+                        <span class="highlight">SOGETEC</span> a été fondée avec la conviction que l'accès à une énergie fiable et durable est un levier essentiel 
+                        du développement économique et social. Notre mission est de fournir des solutions électriques et électroniques 
+                        innovantes qui répondent aux besoins spécifiques du continent africain, tout en respectant les plus hauts standards 
+                        de qualité et de sécurité. Nous nous engageons à être bien plus qu'un simple fournisseur, mais un véritable partenaire 
+                        pour nos clients, en les accompagnant à chaque étape de leurs projets.
+                    </p>
+                </div>
+                
+                <div class="mission-vision-grid">
+                    <div class="mission-box">
+                        <h3>Notre Mission</h3>
+                        <p>
+                            • Fournir des solutions électriques et électroniques <span class="highlight">haut de gamme</span> adaptées aux besoins africains<br><br>
+                            • Développer des infrastructures énergétiques <span class="highlight">durables et résilientes</span><br><br>
+                            • Former et employer des <span class="highlight">talents locaux</span> pour renforcer les compétences continentales<br><br>
+                            • Promouvoir l'innovation technologique au service du <span class="highlight">développement économique</span><br><br>
+                            • Contribuer à l'électrification du continent avec des solutions <span class="highlight">abordables et fiables</span>
+                        </p>
+                    </div>
+                    
+                    <div class="vision-box">
+                        <h3>Notre Vision</h3>
+                        <p>
+                            • Devenir le leader des solutions énergétiques <span class="highlight">intelligentes</span> en Afrique d'ici 2030<br><br>
+                            • Équiper <span class="highlight">10 millions</span> d'africains en solutions électriques innovantes<br><br>
+                            • Implanter des filiales dans <span class="highlight">12 pays</span> africains<br><br>
+                            • Former <span class="highlight">5 000 techniciens</span> spécialisés dans les nouvelles technologies énergétiques<br><br>
+                            • Réduire de <span class="highlight">30%</span> l'empreinte carbone de nos solutions d'ici 2028
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mission-paragraph">
+                    <h3>Nos Valeurs Fondamentales</h3>
+                    <p>
+                        Ces engagements s'appuient sur des valeurs solides qui guident chacune de nos actions et décisions :
+                    </p>
+                    
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-medal"></i></div>
+                            <h4>Excellence</h4>
+                            <p>Nous visons la perfection technique dans chaque réalisation, avec des normes de qualité inégalées.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-hands-helping"></i></div>
+                            <h4>Partage</h4>
+                            <p>Nous croyons au transfert de compétences et à la montée en puissance des talents locaux.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-globe-africa"></i></div>
+                            <h4>Engagement Africain</h4>
+                            <p>Nous développons des solutions adaptées aux réalités et besoins spécifiques du continent.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-bolt"></i></div>
+                            <h4>Innovation</h4>
+                            <p>Nous repoussons constamment les limites technologiques pour offrir des solutions avant-gardistes.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                            <h4>Responsabilité</h4>
+                            <p>Nous assumons nos engagements envers nos clients, nos employés et nos communautés.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                            <h4>Durabilité</h4>
+                            <p>Nous intégrons systématiquement des considérations environnementales dans nos solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mission-paragraph">
+                    <h3>Notre Impact</h3>
+                    <p>
+                        À travers notre mission et notre vision, nous contribuons activement à la réalisation des <span class="highlight">Objectifs de Développement Durable</span> 
+                        des Nations Unies, particulièrement l'ODD 7 (Énergie propre et d'un coût abordable) et l'ODD 9 (Industrie, innovation et infrastructure). 
+                        Nos projets d'électrification rurale, nos solutions énergétiques hybrides et nos programmes de formation technique 
+                        participent concrètement à l'amélioration des conditions de vie et au développement économique des régions où nous intervenons.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="presentation.html">Présentation</a>
+                <a href="mission-vision.html">Mission & Vision</a>
+                <a href="#">Services techniques</a>
+                <a href="#">Conditions générales</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

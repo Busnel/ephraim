@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision - SOGETEC | Matériel Électronique Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        /* Header */
+        header {
+            position: relative;
+            color: white;
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .vision-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .vision-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .vision-paragraph {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .vision-paragraph:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .vision-paragraph h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .vision-paragraph p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .values-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .value-item {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .value-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .vision-container {
+                padding: 0 20px;
+            }
+            
+            .vision-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .values-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">SOGE<span>TEC</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="vision-container">
+            <h2 class="section-title">NOTRE VISION STRATÉGIQUE</h2>
+            
+            <div class="vision-content">
+                <div class="vision-paragraph">
+                    <h3>Une Ambition Industrielle</h3>
+                    <p>
+                        Chez <span class="highlight">SOGETEC</span>, nous envisageons un futur où l'innovation technologique et le développement durable 
+                        se conjuguent pour créer des solutions électriques et électroniques performantes, fiables et respectueuses 
+                        de l'environnement. Notre vision s'articule autour de trois axes majeurs : devenir un leader régional 
+                        dans le domaine des infrastructures électriques, développer des partenariats stratégiques avec les 
+                        acteurs majeurs du secteur, et participer activement à la transition énergétique en Afrique.
+                    </p>
+                </div>
+                
+                <div class="vision-paragraph">
+                    <h3>Innovation et Croissance</h3>
+                    <p>
+                        Nous nous engageons à investir continuellement dans la <span class="highlight">recherche et développement</span> pour anticiper 
+                        les besoins futurs de nos clients. Notre feuille de route technologique inclut le développement de 
+                        solutions intelligentes pour les réseaux électriques, l'intégration des énergies renouvelables dans 
+                        nos projets, et l'adoption des dernières innovations en matière d'automatisation industrielle. 
+                        D'ici 2030, nous visons à étendre nos activités à cinq nouveaux pays africains, tout en maintenant 
+                        notre engagement en faveur de la qualité et de l'excellence technique.
+                    </p>
+                </div>
+                
+                <div class="vision-paragraph">
+                    <h3>Nos Valeurs Fondamentales</h3>
+                    <p>
+                        La vision de SOGETEC s'appuie sur des valeurs solides qui guident chacune de nos actions et décisions :
+                    </p>
+                    
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-bullseye"></i></div>
+                            <h4>Excellence Technique</h4>
+                            <p>Nous visons l'excellence dans chaque projet, avec des solutions sur mesure et des équipes hautement qualifiées.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                            <h4>Intégrité</h4>
+                            <p>Nous cultivons la transparence, l'éthique et le respect dans toutes nos relations d'affaires.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-leaf"></i></div>
+                            <h4>Développement Durable</h4>
+                            <p>Nous intégrons des pratiques écoresponsables dans toutes nos activités pour un impact positif sur l'environnement.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-users"></i></div>
+                            <h4>Engagement Social</h4>
+                            <p>Nous contribuons au développement des communautés locales par la formation et l'emploi.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                            <h4>Innovation Continue</h4>
+                            <p>Nous encourageons la créativité et l'adaptation permanente aux nouvelles technologies.</p>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon"><i class="fas fa-heart"></i></div>
+                            <h4>Satisfaction Client</h4>
+                            <p>Nous plaçons nos clients au centre de notre démarche avec un service personnalisé et réactif.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="vision-paragraph">
+                    <h3>Un Avenir Électrisant</h3>
+                    <p>
+                        Notre vision pour <span class="highlight">2030</span> est de positionner SOGETEC comme un acteur incontournable dans le secteur 
+                        de l'énergie et de l'électrification en Afrique. Nous travaillons à développer des solutions 
+                        innovantes pour répondre aux défis de l'urbanisation croissante et des besoins énergétiques 
+                        continentaux. À travers nos investissements dans les énergies renouvelables, les smart grids 
+                        et la formation des talents locaux, nous contribuons à bâtir un avenir où l'accès à une 
+                        électricité fiable et durable sera un moteur de développement économique et social pour tous.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="presentation.html">Présentation</a>
+                <a href="vision.html">Vision</a>
+                <a href="#">Services techniques</a>
+                <a href="#">Conditions générales</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

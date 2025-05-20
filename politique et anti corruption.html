@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politique Anti-Corruption - SOGETEC | Éthique et Intégrité</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .policy-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .policy-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .policy-paragraph {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .policy-paragraph:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .policy-paragraph h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .policy-paragraph p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .principle-card {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .principle-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .principle-card h4 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .reporting-box {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-left: 5px solid var(--primary-color);
+            padding: 30px;
+            margin-top: 40px;
+            border-radius: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .policy-container {
+                padding: 0 20px;
+            }
+            
+            .policy-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SOGE<span>TEC</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    
+    <main>
+        <div class="policy-container">
+            <h2 class="section-title">NOTRE ENGAGEMENT ÉTHIQUE</h2>
+            
+            <div class="policy-content">
+                <div class="policy-paragraph">
+                    <h3>Position de SOGETEC</h3>
+                    <p>
+                        <span class="highlight">SOGETEC</span> s'engage fermement à mener ses activités avec intégrité, transparence et dans le respect des lois en vigueur 
+                        dans tous les pays où nous opérons. Nous rejetons toute forme de corruption, qu'il s'agisse de pots-de-vin, de favoritisme, 
+                        de détournement de fonds ou de tout autre comportement contraire à l'éthique. Notre politique anti-corruption s'applique à 
+                        tous nos collaborateurs, dirigeants, fournisseurs et partenaires commerciaux, sans exception.
+                    </p>
+                </div>
+                
+                <div class="policy-paragraph">
+                    <h3>Nos Principes Fondamentaux</h3>
+                    <p>
+                        La politique anti-corruption de SOGETEC repose sur six principes clairs et non négociables :
+                    </p>
+                    
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <h4><i class="fas fa-ban"></i> Tolérance Zéro</h4>
+                            <p>Aucune forme de corruption n'est tolérée, qu'elle soit directe ou indirecte, active ou passive.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <h4><i class="fas fa-gavel"></i> Conformité Légale</h4>
+                            <p>Respect strict des lois anti-corruption dans tous les pays où nous opérons, y compris la loi Sapin II et le UK Bribery Act.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <h4><i class="fas fa-book"></i> Transparence</h4>
+                            <p>Tenue d'une comptabilité précise et vérifiable, avec traçabilité complète de toutes les transactions.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <h4><i class="fas fa-handshake-slash"></i> Pas de Pots-de-vin</h4>
+                            <p>Interdiction absolue d'offrir, promettre, donner ou recevoir des avantages indus pour obtenir un contrat ou un avantage commercial.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <h4><i class="fas fa-user-tie"></i> Responsabilité</h4>
+                            <p>Chaque collaborateur est responsable du respect de cette politique, avec obligation de vigilance et de reporting.</p>
+                        </div>
+                        
+                        <div class="principle-card">
+                            <h4><i class="fas fa-balance-scale"></i> Sanctions</h4>
+                            <p>Toute violation entraînera des sanctions disciplinaires et pourrait conduire à des poursuites judiciaires.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="policy-paragraph">
+                    <h3>Mise en Œuvre Concrète</h3>
+                    <p>
+                        Pour donner vie à ces principes, SOGETEC a mis en place plusieurs dispositifs opérationnels :
+                    </p>
+                    
+                    <ul style="color: #555; line-height: 1.8; font-size: 1.1rem; margin-left: 20px; margin-top: 15px;">
+                        <li style="margin-bottom: 10px;"><strong>Formation obligatoire</strong> : Tous les employés suivent une formation annuelle sur la prévention de la corruption</li>
+                        <li style="margin-bottom: 10px;"><strong>Due diligence</strong> : Vérification approfondie de tous nos partenaires et fournisseurs</li>
+                        <li style="margin-bottom: 10px;"><strong>Contrôles internes</strong> : Audit régulier des processus sensibles (achats, ventes, intermédiation)</li>
+                        <li style="margin-bottom: 10px;"><strong>Protection des lanceurs d'alerte</strong> : Mécanisme sécurisé pour signaler les comportements suspects</li>
+                        <li style="margin-bottom: 10px;"><strong>Engagement de la direction</strong> : Le COMEX supervise personnellement l'application de cette politique</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-paragraph">
+                    <h3>Signalement des Préoccupations</h3>
+                    <p>
+                        SOGETEC encourage tous ses collaborateurs et partenaires à signaler toute préoccupation ou suspicion de comportement contraire à l'éthique.
+                    </p>
+                    
+                    <div class="reporting-box">
+                        <h4 style="color: var(--primary-color); margin-bottom: 15px;"><i class="fas fa-shield-alt"></i> Comment signaler une préoccupation ?</h4>
+                        <p><strong>Email dédié :</strong> <a href="mailto:ethique@sogetec.fr">ethique@sogetec.fr</a> (chiffré et confidentiel)</p>
+                        <p><strong>Ligne téléphonique :</strong> +33 1 92 36 52 67 (disponible 24h/24, anonymat garanti)</p>
+                        <p><strong>Formulaire en ligne :</strong> Accessible sur notre intranet sécurisé</p>
+                        <p style="margin-top: 15px;">Tous les signalements sont traités avec la plus stricte confidentialité et aucune représaille ne sera tolérée contre les lanceurs d'alerte de bonne foi.</p>
+                    </div>
+                </div>
+                
+                <div class="policy-paragraph">
+                    <h3>Engagement de la Direction</h3>
+                    <p>
+                        La direction générale de <span class="highlight">SOGETEC</span> s'engage personnellement à faire vivre cette politique au quotidien. Nous considérons que 
+                        l'intégrité n'est pas une contrainte mais un avantage compétitif qui renforce la confiance de nos clients, partenaires 
+                        et collaborateurs. Cette politique est révisée annuellement pour s'assurer de son adéquation avec les meilleures pratiques 
+                        internationales et l'évolution du cadre législatif.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="présentation.html">Présentation</a>
+                <a href="politique-anti-corruption.html">Politique Anti-Corruption</a>
+                <a href="#">Services techniques</a>
+                <a href="#">Conditions générales</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

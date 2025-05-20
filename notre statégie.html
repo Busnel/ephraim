@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stratégie & Forces - SOGETEC | Matériel Électronique Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .strategy-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .strategy-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .strategy-paragraph {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .strategy-paragraph:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .strategy-paragraph h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .strategy-paragraph p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .strength-card {
+            background-color: var(--accent-color);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .strength-card h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .strength-card h4 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .strategy-container {
+                padding: 0 20px;
+            }
+            
+            .strategy-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+        <nav>
+            <div class="logo">SOGE<span>TEC</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    
+    <main>
+        <div class="strategy-container">
+            <h2 class="section-title">NOTRE APPROCHE STRATÉGIQUE</h2>
+            
+            <div class="strategy-content">
+                <div class="strategy-paragraph">
+                    <h3>Une Stratégie Axée sur l'Excellence</h3>
+                    <p>
+                        <span class="highlight">SOGETEC</span> a développé une stratégie globale reposant sur trois piliers fondamentaux : l'innovation technologique, 
+                        le développement durable et la satisfaction client. Notre approche combine une expertise technique pointue avec une 
+                        compréhension approfondie des besoins spécifiques du marché africain. Nous investissons continuellement dans la 
+                        formation de nos équipes, le développement de partenariats stratégiques et l'adoption des dernières technologies 
+                        pour maintenir notre position de leader dans le secteur de l'énergie et des infrastructures électriques.
+                    </p>
+                </div>
+                
+                <div class="strategy-paragraph">
+                    <h3>Nos Axes Stratégiques</h3>
+                    <p>
+                        Pour répondre aux défis énergétiques du continent, nous avons défini quatre axes stratégiques prioritaires :
+                    </p>
+                    
+                    <div class="strengths-grid">
+                        <div class="strength-card">
+                            <h4><i class="fas fa-bolt"></i> Innovation Technologique</h4>
+                            <p>Développement continu de solutions adaptées aux contraintes locales, intégration des smart grids et des énergies renouvelables dans nos projets.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-chart-line"></i> Croissance Régionale</h4>
+                            <p>Expansion maîtrisée dans les pays africains à fort potentiel, avec création de filiales locales et transfert de compétences.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-users"></i> Capital Humain</h4>
+                            <p>Investissement dans la formation et le développement des compétences locales pour créer une expertise africaine durable.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-leaf"></i> Durabilité</h4>
+                            <p>Intégration systématique des considérations environnementales et sociales dans tous nos projets et solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="strategy-paragraph">
+                    <h3>Nos Forces Compétitives</h3>
+                    <p>
+                        La réussite de SOGETEC repose sur des atouts distinctifs qui nous permettent de nous différencier sur le marché :
+                    </p>
+                    
+                    <div class="strengths-grid">
+                        <div class="strength-card">
+                            <h4><i class="fas fa-cogs"></i> Expertise Multidisciplinaire</h4>
+                            <p>Une équipe pluridisciplinaire combinant compétences en génie électrique, électronique, automatisme et génie civil.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-globe-africa"></i> Connaissance du Terrain</h4>
+                            <p>Une parfaite maîtrise des spécificités techniques et réglementaires des marchés africains.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-handshake"></i> Partenariats Solides</h4>
+                            <p>Des collaborations stratégiques avec les principaux fabricants mondiaux et les acteurs locaux.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-tools"></i> Parc Équipement Complet</h4>
+                            <p>Un parc de matériel moderne et complet pour répondre à tous types de projets, des plus simples aux plus complexes.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-certificate"></i> Certifications Internationales</h4>
+                            <p>Des certifications ISO et sectorielles qui attestent de notre engagement qualité et sécurité.</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <h4><i class="fas fa-lightbulb"></i> Approche Sur-Mesure</h4>
+                            <p>Une capacité unique à développer des solutions adaptées aux contraintes et budgets de chaque client.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="strategy-paragraph">
+                    <h3>Notre Différenciation</h3>
+                    <p>
+                        Ce qui fait la <span class="highlight">singularité de SOGETEC</span>, c'est notre capacité à allier savoir-faire technique international et 
+                        parfaite connaissance des réalités locales africaines. Contrairement aux acteurs purement internationaux, 
+                        nous comprenons les défis spécifiques du continent (climat, maintenance, formation). Contrairement aux 
+                        acteurs purement locaux, nous offrons des standards de qualité internationaux et accès aux dernières 
+                        technologies. Cette position unique nous permet de proposer des solutions réellement adaptées, durables 
+                        et économiquement viables pour l'Afrique.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="presentation.html">Présentation</a>
+                <a href="strategie-forces.html">Stratégie & Forces</a>
+                <a href="#">Services techniques</a>
+                <a href="#">Conditions générales</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

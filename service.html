@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - SOGETEC | Matériel Électronique Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .services-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .services-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-category {
+            margin-bottom: 60px;
+        }
+        
+        .service-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        .service-details {
+            padding: 25px;
+        }
+        
+        .service-details h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .service-details p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .service-features {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .service-features li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-container {
+                padding: 0 20px;
+            }
+            
+            .services-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SOGE<span>TEC</span></div>
+            
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    
+    <main>
+        <div class="services-container">
+            <h2 class="section-title">NOS SERVICES PROFESSIONNELS</h2>
+            
+            <div class="services-content">
+                <div class="intro-paragraph">
+                    <p>
+                        <span class="highlight">SOGETEC</span> propose une gamme complète de services spécialisés pour répondre à tous vos besoins en matériel électronique professionnel. 
+                        Notre expertise technique et notre connaissance approfondie des marchés africains nous permettent d'offrir des solutions sur-mesure, 
+                        allant de la fourniture d'équipements à la maintenance préventive et corrective. Découvrez ci-dessous l'étendue de nos services.
+                    </p>
+                </div>
+                
+                <div class="service-category">
+                    <h3>Services Techniques</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Maintenance Industrielle</h4>
+                                <p>Services de maintenance préventive et corrective pour vos équipements électroniques et électriques.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Diagnostics avancés</li>
+                                    <li><i class="fas fa-check"></i> Interventions rapides</li>
+                                    <li><i class="fas fa-check"></i> Contrats de maintenance sur mesure</li>
+                                    <li><i class="fas fa-check"></i> Reporting détaillé</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Intégration de Systèmes</h4>
+                                <p>Conception et mise en œuvre de solutions électroniques complexes adaptées à vos besoins spécifiques.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Études techniques</li>
+                                    <li><i class="fas fa-check"></i> Déploiement clé en main</li>
+                                    <li><i class="fas fa-check"></i> Tests et validation</li>
+                                    <li><i class="fas fa-check"></i> Documentation complète</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Dépannage Électronique</h4>
+                                <p>Réparation et remise en état de vos cartes électroniques et équipements défectueux.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Atelier équipé</li>
+                                    <li><i class="fas fa-check"></i> Techniciens certifiés</li>
+                                    <li><i class="fas fa-check"></i> Pièces détachées originales</li>
+                                    <li><i class="fas fa-check"></i> Garantie sur réparation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-category">
+                    <h3>Services Conseils</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Audit Technique</h4>
+                                <p>Évaluation complète de vos installations électriques et électroniques pour optimiser leurs performances.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Analyse des risques</li>
+                                    <li><i class="fas fa-check"></i> Recommandations d'amélioration</li>
+                                    <li><i class="fas fa-check"></i> Plan de modernisation</li>
+                                    <li><i class="fas fa-check"></i> Estimation des coûts</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Optimisation Énergétique</h4>
+                                <p>Solutions pour réduire votre consommation énergétique tout en maintenant vos performances opérationnelles.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Bilan énergétique</li>
+                                    <li><i class="fas fa-check"></i> Solutions sur mesure</li>
+                                    <li><i class="fas fa-check"></i> Retour sur investissement</li>
+                                    <li><i class="fas fa-check"></i> Suivi des économies</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Conformité & Sécurité</h4>
+                                <p>Vérification et mise en conformité de vos installations avec les normes en vigueur.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Analyse réglementaire</li>
+                                    <li><i class="fas fa-check"></i> Dossiers techniques</li>
+                                    <li><i class="fas fa-check"></i> Formations spécifiques</li>
+                                    <li><i class="fas fa-check"></i> Accompagnement certification</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="service-category">
+                    <h3>Services Spécialisés</h3>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Formation Technique</h4>
+                                <p>Programmes de formation adaptés à vos équipes pour une maîtrise optimale de vos équipements.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Catalogue de formations</li>
+                                    <li><i class="fas fa-check"></i> Programmes sur mesure</li>
+                                    <li><i class="fas fa-check"></i> Formateurs experts</li>
+                                    <li><i class="fas fa-check"></i> Supports pédagogiques</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Gestion de Parc</h4>
+                                <p>Externalisation complète de la gestion de votre parc d'équipements électroniques.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Inventaire digitalisé</li>
+                                    <li><i class="fas fa-check"></i> Planning de maintenance</li>
+                                    <li><i class="fas fa-check"></i> Gestion des pièces</li>
+                                    <li><i class="fas fa-check"></i> Reporting personnalisé</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="service-details">
+                                <h4>Mise à Niveau Technologique</h4>
+                                <p>Modernisation de vos équipements existants pour prolonger leur durée de vie et améliorer leurs performances.</p>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check"></i> Audit de modernisation</li>
+                                    <li><i class="fas fa-check"></i> Solutions rétrofit</li>
+                                    <li><i class="fas fa-check"></i> Intégration progressive</li>
+                                    <li><i class="fas fa-check"></i> Formation associée</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="value-proposition">
+                    <h3>Notre Engagement</h3>
+                    <p>
+                        Chez <span class="highlight">SOGETEC</span>, nous ne nous contentons pas de fournir des services techniques - nous construisons des partenariats durables. 
+                        Notre approche repose sur une compréhension approfondie de vos enjeux, une transparence totale dans nos interventions 
+                        et une recherche constante de l'excellence opérationnelle. Nos équipes dédiées s'engagent à vous fournir des solutions 
+                        fiables, pérennes et adaptées aux réalités du terrain africain, avec un seul objectif : votre satisfaction totale.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="presentation.html">Présentation</a>
+                <a href="strategie-forces.html">Stratégie & Forces</a>
+                <a href="services.html">Services techniques</a>
+                <a href="#">Conditions générales</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>

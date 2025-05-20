@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations - SOGETEC | Matériel Électronique Professionnel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Couleurs thématiques */
+        :root {
+            --primary-color: #A7001E; /* Rouge bordeaux */
+            --secondary-color: #7AA95C; /* Vert doux */
+            --accent-color: #e5e7e6; /* Gris clair */
+            --dark-color: #333;
+            --light-color: #f5f5f5;
+        }
+        
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background-color: rgba(0,0,0,0.5);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Contenu principal */
+        .realisations-container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+        }
+        
+        .realisations-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .intro-paragraph {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        
+        .intro-paragraph p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .realisation-category {
+            margin-bottom: 60px;
+        }
+        
+        .realisation-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+        
+        .realisations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .realisation-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .realisation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .realisation-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .realisation-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .realisation-details {
+            padding: 25px;
+        }
+        
+        .realisation-details h4 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .realisation-details p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .realisation-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            color: #777;
+        }
+        
+        .realisation-features {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+        
+        .realisation-features li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+            display: flex;
+            align-items: center;
+        }
+        
+        .realisation-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .realisation-features li i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+        }
+        
+        .testimonial-section {
+            background-color: var(--accent-color);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .testimonial-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial {
+            font-style: italic;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            text-align: left;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .realisations-container {
+                padding: 0 20px;
+            }
+            
+            .realisations-content {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .realisations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .realisation-stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SOGE<span>TEC</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <div class="realisations-container">
+            <h2 class="section-title">NOS RÉALISATIONS</h2>
+            
+            <div class="realisations-content">
+                <div class="intro-paragraph">
+                    <p>
+                        Découvrez une sélection de nos <span class="highlight">projets phares</span> qui témoignent de notre expertise et de notre engagement envers l'excellence technique. 
+                        Ces réalisations concrètes illustrent notre capacité à répondre aux défis les plus complexes en matière d'électronique professionnelle 
+                        à travers l'Afrique.
+                    </p>
+                </div>
+                
+                <div class="realisation-category">
+                    <h3>Projets Énergétiques</h3>
+                    <div class="realisations-grid">
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">Sénégal</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Centrale Solaire de Thiès</h4>
+                                <p>Installation complète d'une centrale solaire de 5MW avec système de stockage et intégration au réseau national.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">5MW</div>
+                                        <div class="stat-label">Capacité</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">12 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">15 000</div>
+                                        <div class="stat-label">Foyers</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Conception sur mesure</li>
+                                    <li><i class="fas fa-check"></i> Formation des techniciens locaux</li>
+                                    <li><i class="fas fa-check"></i> Maintenance garantie 5 ans</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">Côte d'Ivoire</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Rénovation Poste HT Abidjan</h4>
+                                <p>Modernisation complète d'un poste de transformation haute tension pour la société nationale d'électricité.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">225kV</div>
+                                        <div class="stat-label">Tension</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">8 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">30%</div>
+                                        <div class="stat-label">Efficacité+</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Technologie dernier cri</li>
+                                    <li><i class="fas fa-check"></i> Minimisation des coupures</li>
+                                    <li><i class="fas fa-check"></i> Système de monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1497440001374-f26997338d02?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">Mali</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Électrification Rurale Bamako</h4>
+                                <p>Déploiement d'un réseau électrique intelligent pour 20 villages isolés dans la région de Bamako.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">20</div>
+                                        <div class="stat-label">Villages</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">18 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">50km</div>
+                                        <div class="stat-label">Réseau</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Solution hybride solaire/diesel</li>
+                                    <li><i class="fas fa-check"></i> Formation des gestionnaires locaux</li>
+                                    <li><i class="fas fa-check"></i> Système de paiement prépayé</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="realisation-category">
+                    <h3>Projets Industriels</h3>
+                    <div class="realisations-grid">
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">Gabon</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Automatisation Usine Agroalimentaire</h4>
+                                <p>Modernisation complète du système de contrôle-commande d'une importante usine de transformation alimentaire.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">100%</div>
+                                        <div class="stat-label">Automatisation</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">6 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">25%</div>
+                                        <div class="stat-label">Productivité+</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Système SCADA sur mesure</li>
+                                    <li><i class="fas fa-check"></i> Réduction des pannes</li>
+                                    <li><i class="fas fa-check"></i> Interface utilisateur simplifiée</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1581093057305-25a0a6b9ca0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">Cameroun</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Ligne de Production Automobile</h4>
+                                <p>Conception et installation de l'électronique de contrôle pour une nouvelle ligne d'assemblage automobile.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">150</div>
+                                        <div class="stat-label">Automates</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">9 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">30 000</div>
+                                        <div class="stat-label">Véhicules/an</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Intégration robotique</li>
+                                    <li><i class="fas fa-check"></i> Système de qualité en ligne</li>
+                                    <li><i class="fas fa-check"></i> Maintenance prédictive</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="realisation-card">
+                            <div class="realisation-image" style="background-image: url('https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');">
+                                <span class="realisation-badge">RDC</span>
+                            </div>
+                            <div class="realisation-details">
+                                <h4>Optimisation Mine de Cuivre</h4>
+                                <p>Amélioration des systèmes électriques et électroniques d'une importante mine à ciel ouvert.</p>
+                                
+                                <div class="realisation-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-value">40%</div>
+                                        <div class="stat-label">Économie énergie</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">4 mois</div>
+                                        <div class="stat-label">Durée</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-value">24/7</div>
+                                        <div class="stat-label">Disponibilité</div>
+                                    </div>
+                                </div>
+                                
+                                <ul class="realisation-features">
+                                    <li><i class="fas fa-check"></i> Solution résistante aux conditions extrêmes</li>
+                                    <li><i class="fas fa-check"></i> Monitoring à distance</li>
+                                    <li><i class="fas fa-check"></i> Formation du personnel local</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-section">
+                    <h3>ILS NOUS ONT FAIT CONFIANCE</h3>
+                    <p class="testimonial">
+                        "SOGETEC a su relever le défi technologique que représentait notre projet d'électrification rurale. Leur expertise technique, 
+                        combinée à une parfaite connaissance des réalités locales, a fait toute la différence. Le projet a été livré dans les délais 
+                        et le budget prévus, avec un niveau de qualité exceptionnel."
+                    </p>
+                    <p class="testimonial-author">
+                        - M. Diop, Directeur des Opérations, Société Nationale d'Électricité du Sénégal
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>SOGETEC</h3>
+                <p>Votre fournisseur de matériel électronique professionnel depuis 2005. Qualité, expertise et service client au cœur de notre métier.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Liens Utiles</h3>
+                <a href="index.html">Accueil</a>
+                <a href="strategie-forces.html">Stratégie</a>
+                <a href="services.html">Services</a>
+                <a href="réalisation.html">Réalisations</a>
+                <a href="#">Contact</a>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 12 Rue des Composants, 75000 Paris</p>
+                <p><i class="fas fa-phone"></i> 01 23 45 67 89</p>
+                <p><i class="fas fa-envelope"></i> contact@sogetec.fr</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Réseaux Sociaux</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 SOGETEC. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
